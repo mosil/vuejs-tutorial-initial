@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mosil Studio</title>
+        <style>
+            #app {
+                margin: 1em;
+            }
+            
+            .cp {
+                border: 1px solid #000000;
+                padding: 10px;
+            }
+        </style>
+    </header>
+    <body>
+        <div id="app">
+            <my-component></my-component>
+        </div>
+        
+        <script src="https://unpkg.com/vue"></script>
+
+        <script type="text/x-template" id="my-template">
+            <div>
+                <div class="cp">何期自性本自清淨</div>
+                <div class="cp">何期自性本不生滅</div>
+                <div class="cp">何期自性本自具足</div>
+                <div class="cp">何期自性本無動搖</div>
+                <div class="cp">何期自性能生萬法</div>
+            </div>
+        </script>
+
+        <script>
+
+            Vue.component('my-component', {
+                    template: '#my-template'
+            });
+
+            new Vue({
+                'el': "#app"
+            });
+        </script>
+    </body>
+</html>

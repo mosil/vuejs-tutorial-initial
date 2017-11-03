@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mosil Studio</title>
+    </header>
+    <body>
+        <div id="app">
+            <h1>佛陀</h1>
+            <ul>
+                <li v-for="(value, key, index) in list">
+                    {{ index }}. {{ key }}: {{value.buddha}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    list: {
+                        '中央': { buddha: '南無本師釋迦牟尼佛'},
+                        '西方': { buddha: '南無阿彌陀佛'},
+                        '東方': { buddha: '南無藥師琉璃光佛'}
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

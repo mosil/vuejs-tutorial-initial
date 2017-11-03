@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mosil Studio</title>
+    </header>
+    <body>
+        <div id="app">
+            <h1>練習</h1>
+            <div>
+                <input type="text" v-model="newVal" >
+                <button>新增</button>
+            </div>
+            <ul>
+                <li v-for="item in list">
+                    {{ item.content }} <a href="#" @click.prevent="removeItem(item)">刪除</a>
+                </li>
+            </ul>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    list:[],
+                    newVal:''
+                }, 
+                methods: {
+                    addItem: function (val) {
+                        this.list.push({content: val});
+                        this.newVal = null;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

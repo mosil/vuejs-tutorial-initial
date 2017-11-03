@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mosil Studio</title>
+    </header>
+    <body>
+        <div id="app">
+            <h1>請輸入方位：東 或 西</h1>
+            <input type="text" v-model="dir">
+            <div v-if="dir==='西'">{{ text1 }}</div>
+            <div v-else-if="dir==='東'">{{ text2 }}</div>
+            <div v-else>{{ text }}</div>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    text: '南無本師釋迦牟尼佛',
+                    text1: '阿彌陀佛在西方', 
+                    text2: '藥師琉璃光佛在東方', 
+                    dir: '西'
+                }
+            });
+        </script>
+    </body>
+</html>

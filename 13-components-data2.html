@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mosil Studio</title>
+        <style>
+            #app {
+                margin: 1em;
+            }
+            
+            .cp {
+                border: 1px solid #000000;
+                padding: 10px;
+            }
+        </style>
+    </header>
+    <body>
+        <div id="app">
+            <my-component></my-component>
+            <my-component></my-component>
+            <my-component></my-component>
+        </div>
+        
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            var data = {
+                count: 0
+            };
+
+            // wrong
+            // Vue.component('my-component', {
+            //         template: '<div> <span> {{ count }}</span> - <button @click="count++">add</button></div>',
+            //         data: function() {
+            //             return data;
+            //         }
+            // });
+
+            Vue.component('my-component', {
+                    template: '<div> <span> {{ count }}</span> - <button @click="count++">add</button></div>',
+                    data: function() {
+                        return {
+                            count : 0
+                        };
+                    }
+            });
+
+            new Vue({
+                'el': "#app"
+            });
+
+        </script>
+    </body>
+</html>

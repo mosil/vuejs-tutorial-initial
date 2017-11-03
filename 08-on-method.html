@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Mosil Studio</title>
+    </header>
+    <body>
+        <div id="app">
+            <h1>佛陀</h1>
+            <ul>
+                <li v-for="(value, index) in list" 
+                    v-on:click="showDir('abc')">
+                    {{ index }}. {{ value.buddha }}
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    list:[{
+                            buddha: '南無本師釋迦牟尼佛',
+                            dir: '中央'
+                        },{
+                            buddha: '南無阿彌陀佛',
+                            dir: '西方'
+                        },{
+                            buddha: '南無藥師琉璃光佛',
+                            dir: '東方'
+                        }
+                    ]
+                },
+                mehtods:{
+                    showDir: function(dir) {
+                        alert('在 ' + this.dir);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
